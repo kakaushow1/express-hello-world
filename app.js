@@ -7,9 +7,24 @@ app.use(express.urlencoded({extended: true}));
 
 app.get("/", (req, res) => res.type('html').send(html));
 
-app.get("Kauani de Paula", (req, res) => res.type('html').send(kau));
+app.get("/Kauani de Paula", (req, res) => res.type('html').send(kau));
 
 app.get("tico", (req, res) => res.type('html').send(teco));
+
+app.get("/pokemons", (req, res) => {
+  res.json([
+      "Pikachu",
+      "Caterpie",
+      "Pidgeotto",
+      "Bulbasaur",
+      "Charmander",
+      "Squirtle",
+      "Kingler",
+      "Muk",
+      "Tauros",
+      "Lapras"
+  ]);
+});
 
 app.get('/req', (req, res) => {
     console.log("Just got a request!")
